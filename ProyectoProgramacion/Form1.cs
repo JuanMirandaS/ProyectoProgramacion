@@ -15,6 +15,7 @@ namespace ProyectoProgramacion
              * txtDescripcion set ""
              * numHorasTotales set 0
              */
+
         }
 
         private void limpiezaTarea()
