@@ -46,4 +46,11 @@ namespace ProyectoProgramacion.Http
     public class RespuestaTarea : RespuestaBase<Tarea>
     {
     }
+    public class RespuestaListaDeUsuarios : RespuestaBase<List<Usuario>>
+    {
+    }
+
+    public class RespuestaUsuario : RespuestaBase<Usuario>
+    {
+    }
 }
