@@ -58,6 +58,10 @@
             label10 = new Label();
             txtTarea = new TextBox();
             dataGridView2 = new DataGridView();
+            btnEditarProyecto = new Button();
+            btnEditarTarea = new Button();
+            btnEliminarProyecto = new Button();
+            btnEliminarTarea = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numHorasTotales).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -78,36 +82,36 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(idProyecto);
             groupBox1.Controls.Add(label0);
-            groupBox1.Font = new Font("Segoe Fluent Icons", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(12, 79);
+            groupBox1.Font = new Font("Segoe Fluent Icons", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox1.Location = new Point(12, 69);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(657, 270);
+            groupBox1.Size = new Size(657, 288);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             // 
             // btnLimpiarProyecto
             // 
-            btnLimpiarProyecto.Font = new Font("Segoe Fluent Icons", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLimpiarProyecto.Font = new Font("Segoe Fluent Icons", 15F, FontStyle.Regular, GraphicsUnit.Point);
             btnLimpiarProyecto.ForeColor = Color.Red;
-            btnLimpiarProyecto.Location = new Point(531, 189);
+            btnLimpiarProyecto.Location = new Point(531, 206);
             btnLimpiarProyecto.Name = "btnLimpiarProyecto";
-            btnLimpiarProyecto.Size = new Size(102, 50);
+            btnLimpiarProyecto.Size = new Size(102, 33);
             btnLimpiarProyecto.TabIndex = 10;
-            btnLimpiarProyecto.Text = "Limpiar Campos";
+            btnLimpiarProyecto.Text = "Limpiar";
             btnLimpiarProyecto.TextAlign = ContentAlignment.TopCenter;
             btnLimpiarProyecto.UseVisualStyleBackColor = true;
             btnLimpiarProyecto.Click += btnLimpiarProyecto_Click;
             // 
             // btnGuardarProyecto
             // 
-            btnGuardarProyecto.Font = new Font("Segoe Fluent Icons", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnGuardarProyecto.ForeColor = Color.Lime;
+            btnGuardarProyecto.Font = new Font("Segoe Fluent Icons", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            btnGuardarProyecto.ForeColor = Color.Green;
             btnGuardarProyecto.ImageAlign = ContentAlignment.TopCenter;
-            btnGuardarProyecto.Location = new Point(399, 189);
+            btnGuardarProyecto.Location = new Point(399, 206);
             btnGuardarProyecto.Name = "btnGuardarProyecto";
-            btnGuardarProyecto.Size = new Size(102, 50);
+            btnGuardarProyecto.Size = new Size(102, 33);
             btnGuardarProyecto.TabIndex = 9;
-            btnGuardarProyecto.Text = "Guardar proyecto";
+            btnGuardarProyecto.Text = "Guardar";
             btnGuardarProyecto.TextAlign = ContentAlignment.TopCenter;
             btnGuardarProyecto.UseVisualStyleBackColor = true;
             btnGuardarProyecto.Click += btnGuardarProyecto_Click;
@@ -132,7 +136,7 @@
             txtDescripcion.Location = new Point(181, 79);
             txtDescripcion.Multiline = true;
             txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(409, 56);
+            txtDescripcion.Size = new Size(277, 56);
             txtDescripcion.TabIndex = 6;
             // 
             // label3
@@ -176,8 +180,8 @@
             // 
             // label1
             // 
-            label1.Font = new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(34, 19);
+            label1.Font = new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(34, 9);
             label1.Name = "label1";
             label1.Size = new Size(657, 57);
             label1.TabIndex = 2;
@@ -189,13 +193,13 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(727, 79);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(609, 270);
+            dataGridView1.Size = new Size(519, 239);
             dataGridView1.TabIndex = 3;
             // 
             // label5
             // 
-            label5.Font = new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(12, 363);
+            label5.Font = new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(12, 372);
             label5.Name = "label5";
             label5.Size = new Size(657, 57);
             label5.TabIndex = 4;
@@ -206,6 +210,7 @@
             // 
             groupBox2.Controls.Add(boxUsuarios);
             groupBox2.Controls.Add(label9);
+            groupBox2.Controls.Add(txtTarea);
             groupBox2.Controls.Add(boxArea);
             groupBox2.Controls.Add(label11);
             groupBox2.Controls.Add(boxProyecto);
@@ -217,10 +222,10 @@
             groupBox2.Controls.Add(label8);
             groupBox2.Controls.Add(idTarea);
             groupBox2.Controls.Add(label10);
-            groupBox2.Font = new Font("Segoe Fluent Icons", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox2.Location = new Point(12, 423);
+            groupBox2.Font = new Font("Segoe Fluent Icons", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox2.Location = new Point(12, 432);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(657, 283);
+            groupBox2.Size = new Size(657, 300);
             groupBox2.TabIndex = 11;
             groupBox2.TabStop = false;
             // 
@@ -259,6 +264,7 @@
             // 
             // boxProyecto
             // 
+            boxProyecto.DisplayMember = "2";
             boxProyecto.FormattingEnabled = true;
             boxProyecto.Location = new Point(172, 71);
             boxProyecto.Name = "boxProyecto";
@@ -275,25 +281,27 @@
             // 
             // btnLimpiarTarea
             // 
-            btnLimpiarTarea.Font = new Font("Segoe Fluent Icons", 15F);
+            btnLimpiarTarea.Font = new Font("Segoe Fluent Icons", 15F, FontStyle.Regular, GraphicsUnit.Point);
             btnLimpiarTarea.ForeColor = Color.Red;
-            btnLimpiarTarea.Location = new Point(531, 207);
+            btnLimpiarTarea.Location = new Point(531, 225);
             btnLimpiarTarea.Name = "btnLimpiarTarea";
-            btnLimpiarTarea.Size = new Size(102, 50);
+            btnLimpiarTarea.Size = new Size(102, 32);
             btnLimpiarTarea.TabIndex = 10;
-            btnLimpiarTarea.Text = "Limpiar Campos";
+            btnLimpiarTarea.Text = "Limpiar";
+            btnLimpiarTarea.TextAlign = ContentAlignment.TopCenter;
             btnLimpiarTarea.UseVisualStyleBackColor = true;
             btnLimpiarTarea.Click += btnLimpiarTarea_Click;
             // 
             // btnGuardarTarea
             // 
-            btnGuardarTarea.Font = new Font("Segoe Fluent Icons", 15F);
-            btnGuardarTarea.ForeColor = Color.Lime;
-            btnGuardarTarea.Location = new Point(399, 207);
+            btnGuardarTarea.Font = new Font("Segoe Fluent Icons", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            btnGuardarTarea.ForeColor = Color.Green;
+            btnGuardarTarea.Location = new Point(399, 225);
             btnGuardarTarea.Name = "btnGuardarTarea";
-            btnGuardarTarea.Size = new Size(102, 50);
+            btnGuardarTarea.Size = new Size(102, 32);
             btnGuardarTarea.TabIndex = 9;
-            btnGuardarTarea.Text = "Guardar Tarea";
+            btnGuardarTarea.Text = "Guardar";
+            btnGuardarTarea.TextAlign = ContentAlignment.TopCenter;
             btnGuardarTarea.UseVisualStyleBackColor = true;
             btnGuardarTarea.Click += btnGuardarTarea_Click;
             // 
@@ -338,9 +346,9 @@
             // 
             // txtTarea
             // 
-            txtTarea.Location = new Point(184, 454);
+            txtTarea.Location = new Point(172, 31);
             txtTarea.Name = "txtTarea";
-            txtTarea.Size = new Size(286, 23);
+            txtTarea.Size = new Size(286, 28);
             txtTarea.TabIndex = 11;
             // 
             // dataGridView2
@@ -348,16 +356,67 @@
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Location = new Point(727, 423);
             dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(609, 283);
+            dataGridView2.Size = new Size(519, 257);
             dataGridView2.TabIndex = 12;
+            // 
+            // btnEditarProyecto
+            // 
+            btnEditarProyecto.Font = new Font("Segoe Fluent Icons", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEditarProyecto.ForeColor = Color.Green;
+            btnEditarProyecto.Location = new Point(727, 324);
+            btnEditarProyecto.Name = "btnEditarProyecto";
+            btnEditarProyecto.Size = new Size(83, 33);
+            btnEditarProyecto.TabIndex = 11;
+            btnEditarProyecto.Text = "Editar";
+            btnEditarProyecto.TextAlign = ContentAlignment.TopCenter;
+            btnEditarProyecto.UseVisualStyleBackColor = true;
+            // 
+            // btnEditarTarea
+            // 
+            btnEditarTarea.Font = new Font("Segoe Fluent Icons", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEditarTarea.ForeColor = Color.Green;
+            btnEditarTarea.Location = new Point(727, 699);
+            btnEditarTarea.Name = "btnEditarTarea";
+            btnEditarTarea.Size = new Size(83, 33);
+            btnEditarTarea.TabIndex = 13;
+            btnEditarTarea.Text = "Editar";
+            btnEditarTarea.TextAlign = ContentAlignment.TopCenter;
+            btnEditarTarea.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminarProyecto
+            // 
+            btnEliminarProyecto.Font = new Font("Segoe Fluent Icons", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEliminarProyecto.ForeColor = Color.Red;
+            btnEliminarProyecto.Location = new Point(1144, 324);
+            btnEliminarProyecto.Name = "btnEliminarProyecto";
+            btnEliminarProyecto.Size = new Size(102, 33);
+            btnEliminarProyecto.TabIndex = 11;
+            btnEliminarProyecto.Text = "Eliminar";
+            btnEliminarProyecto.TextAlign = ContentAlignment.TopCenter;
+            btnEliminarProyecto.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminarTarea
+            // 
+            btnEliminarTarea.Font = new Font("Segoe Fluent Icons", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEliminarTarea.ForeColor = Color.Red;
+            btnEliminarTarea.Location = new Point(1144, 699);
+            btnEliminarTarea.Name = "btnEliminarTarea";
+            btnEliminarTarea.Size = new Size(102, 33);
+            btnEliminarTarea.TabIndex = 14;
+            btnEliminarTarea.Text = "Eliminar";
+            btnEliminarTarea.TextAlign = ContentAlignment.TopCenter;
+            btnEliminarTarea.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1426, 728);
+            ClientSize = new Size(1264, 747);
+            Controls.Add(btnEliminarTarea);
+            Controls.Add(btnEliminarProyecto);
+            Controls.Add(btnEditarTarea);
+            Controls.Add(btnEditarProyecto);
             Controls.Add(dataGridView2);
-            Controls.Add(txtTarea);
             Controls.Add(groupBox2);
             Controls.Add(label5);
             Controls.Add(dataGridView1);
@@ -371,10 +430,10 @@
             ((System.ComponentModel.ISupportInitialize)numHorasTotales).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numHorasTarea).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -409,5 +468,9 @@
         private Label label11;
         private ComboBox boxUsuarios;
         private Label label9;
+        private Button btnEditarProyecto;
+        private Button btnEditarTarea;
+        private Button btnEliminarProyecto;
+        private Button btnEliminarTarea;
     }
 }
