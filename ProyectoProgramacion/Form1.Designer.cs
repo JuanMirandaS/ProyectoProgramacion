@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            numericIDProyecto = new NumericUpDown();
             btnLimpiarProyecto = new Button();
             btnGuardarProyecto = new Button();
             numHorasTotales = new NumericUpDown();
@@ -44,7 +43,6 @@
             dataGridView1 = new DataGridView();
             label5 = new Label();
             groupBox2 = new GroupBox();
-            numericIDTarea = new NumericUpDown();
             boxUsuarios = new ComboBox();
             label9 = new Label();
             txtTarea = new TextBox();
@@ -65,18 +63,15 @@
             btnEliminarProyecto = new Button();
             btnEliminarTarea = new Button();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericIDProyecto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numHorasTotales).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericIDTarea).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numHorasTarea).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(numericIDProyecto);
             groupBox1.Controls.Add(btnLimpiarProyecto);
             groupBox1.Controls.Add(btnGuardarProyecto);
             groupBox1.Controls.Add(numHorasTotales);
@@ -93,13 +88,6 @@
             groupBox1.Size = new Size(657, 288);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
-            // 
-            // numericIDProyecto
-            // 
-            numericIDProyecto.Location = new Point(577, 21);
-            numericIDProyecto.Name = "numericIDProyecto";
-            numericIDProyecto.Size = new Size(56, 31);
-            numericIDProyecto.TabIndex = 11;
             // 
             // btnLimpiarProyecto
             // 
@@ -176,7 +164,7 @@
             // 
             // idProyecto
             // 
-            idProyecto.Location = new Point(581, 67);
+            idProyecto.Location = new Point(581, 24);
             idProyecto.Name = "idProyecto";
             idProyecto.Size = new Size(39, 28);
             idProyecto.TabIndex = 1;
@@ -220,7 +208,6 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(numericIDTarea);
             groupBox2.Controls.Add(boxUsuarios);
             groupBox2.Controls.Add(label9);
             groupBox2.Controls.Add(txtTarea);
@@ -241,13 +228,6 @@
             groupBox2.Size = new Size(657, 300);
             groupBox2.TabIndex = 11;
             groupBox2.TabStop = false;
-            // 
-            // numericIDTarea
-            // 
-            numericIDTarea.Location = new Point(577, 31);
-            numericIDTarea.Name = "numericIDTarea";
-            numericIDTarea.Size = new Size(56, 31);
-            numericIDTarea.TabIndex = 11;
             // 
             // boxUsuarios
             // 
@@ -293,7 +273,7 @@
             // 
             boxProyecto.DisplayMember = "2";
             boxProyecto.FormattingEnabled = true;
-            boxProyecto.Location = new Point(172, 71);
+            boxProyecto.Location = new Point(156, 71);
             boxProyecto.Name = "boxProyecto";
             boxProyecto.Size = new Size(222, 33);
             boxProyecto.TabIndex = 13;
@@ -357,7 +337,7 @@
             // 
             // idTarea
             // 
-            idTarea.Location = new Point(531, 127);
+            idTarea.Location = new Point(581, 31);
             idTarea.Name = "idTarea";
             idTarea.Size = new Size(39, 28);
             idTarea.TabIndex = 1;
@@ -447,12 +427,10 @@
             Load += Form1_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericIDProyecto).EndInit();
             ((System.ComponentModel.ISupportInitialize)numHorasTotales).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericIDTarea).EndInit();
             ((System.ComponentModel.ISupportInitialize)numHorasTarea).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
@@ -494,7 +472,5 @@
         private Button btnEditarTarea;
         private Button btnEliminarProyecto;
         private Button btnEliminarTarea;
-        private NumericUpDown numericIDProyecto;
-        private NumericUpDown numericIDTarea;
     }
 }
