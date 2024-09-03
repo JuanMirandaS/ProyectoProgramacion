@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            numericIDProyecto = new NumericUpDown();
             btnLimpiarProyecto = new Button();
             btnGuardarProyecto = new Button();
             numHorasTotales = new NumericUpDown();
@@ -43,8 +44,10 @@
             dataGridView1 = new DataGridView();
             label5 = new Label();
             groupBox2 = new GroupBox();
+            numericIDTarea = new NumericUpDown();
             boxUsuarios = new ComboBox();
             label9 = new Label();
+            txtTarea = new TextBox();
             boxArea = new ComboBox();
             label11 = new Label();
             boxProyecto = new ComboBox();
@@ -56,22 +59,24 @@
             label8 = new Label();
             idTarea = new Label();
             label10 = new Label();
-            txtTarea = new TextBox();
             dataGridView2 = new DataGridView();
             btnEditarProyecto = new Button();
             btnEditarTarea = new Button();
             btnEliminarProyecto = new Button();
             btnEliminarTarea = new Button();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericIDProyecto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numHorasTotales).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericIDTarea).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numHorasTarea).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(numericIDProyecto);
             groupBox1.Controls.Add(btnLimpiarProyecto);
             groupBox1.Controls.Add(btnGuardarProyecto);
             groupBox1.Controls.Add(numHorasTotales);
@@ -82,16 +87,23 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(idProyecto);
             groupBox1.Controls.Add(label0);
-            groupBox1.Font = new Font("Segoe Fluent Icons", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox1.Location = new Point(12, 69);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(657, 288);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             // 
+            // numericIDProyecto
+            // 
+            numericIDProyecto.Location = new Point(577, 21);
+            numericIDProyecto.Name = "numericIDProyecto";
+            numericIDProyecto.Size = new Size(56, 31);
+            numericIDProyecto.TabIndex = 11;
+            // 
             // btnLimpiarProyecto
             // 
-            btnLimpiarProyecto.Font = new Font("Segoe Fluent Icons", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLimpiarProyecto.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point);
             btnLimpiarProyecto.ForeColor = Color.Red;
             btnLimpiarProyecto.Location = new Point(531, 206);
             btnLimpiarProyecto.Name = "btnLimpiarProyecto";
@@ -104,7 +116,7 @@
             // 
             // btnGuardarProyecto
             // 
-            btnGuardarProyecto.Font = new Font("Segoe Fluent Icons", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            btnGuardarProyecto.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point);
             btnGuardarProyecto.ForeColor = Color.Green;
             btnGuardarProyecto.ImageAlign = ContentAlignment.TopCenter;
             btnGuardarProyecto.Location = new Point(399, 206);
@@ -120,7 +132,7 @@
             // 
             numHorasTotales.Location = new Point(181, 158);
             numHorasTotales.Name = "numHorasTotales";
-            numHorasTotales.Size = new Size(67, 28);
+            numHorasTotales.Size = new Size(67, 31);
             numHorasTotales.TabIndex = 8;
             // 
             // label4
@@ -151,7 +163,7 @@
             // 
             txtProyecto.Location = new Point(181, 29);
             txtProyecto.Name = "txtProyecto";
-            txtProyecto.Size = new Size(277, 28);
+            txtProyecto.Size = new Size(277, 31);
             txtProyecto.TabIndex = 3;
             // 
             // label2
@@ -164,7 +176,7 @@
             // 
             // idProyecto
             // 
-            idProyecto.Location = new Point(581, 24);
+            idProyecto.Location = new Point(581, 67);
             idProyecto.Name = "idProyecto";
             idProyecto.Size = new Size(39, 28);
             idProyecto.TabIndex = 1;
@@ -193,7 +205,7 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(727, 79);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(519, 239);
+            dataGridView1.Size = new Size(519, 192);
             dataGridView1.TabIndex = 3;
             // 
             // label5
@@ -208,6 +220,7 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(numericIDTarea);
             groupBox2.Controls.Add(boxUsuarios);
             groupBox2.Controls.Add(label9);
             groupBox2.Controls.Add(txtTarea);
@@ -222,19 +235,26 @@
             groupBox2.Controls.Add(label8);
             groupBox2.Controls.Add(idTarea);
             groupBox2.Controls.Add(label10);
-            groupBox2.Font = new Font("Segoe Fluent Icons", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox2.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox2.Location = new Point(12, 432);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(657, 300);
             groupBox2.TabIndex = 11;
             groupBox2.TabStop = false;
             // 
+            // numericIDTarea
+            // 
+            numericIDTarea.Location = new Point(577, 31);
+            numericIDTarea.Name = "numericIDTarea";
+            numericIDTarea.Size = new Size(56, 31);
+            numericIDTarea.TabIndex = 11;
+            // 
             // boxUsuarios
             // 
             boxUsuarios.FormattingEnabled = true;
             boxUsuarios.Location = new Point(172, 159);
             boxUsuarios.Name = "boxUsuarios";
-            boxUsuarios.Size = new Size(222, 29);
+            boxUsuarios.Size = new Size(222, 33);
             boxUsuarios.TabIndex = 17;
             // 
             // label9
@@ -245,13 +265,20 @@
             label9.TabIndex = 16;
             label9.Text = "Usuario asignado";
             // 
+            // txtTarea
+            // 
+            txtTarea.Location = new Point(172, 31);
+            txtTarea.Name = "txtTarea";
+            txtTarea.Size = new Size(286, 31);
+            txtTarea.TabIndex = 11;
+            // 
             // boxArea
             // 
             boxArea.FormattingEnabled = true;
             boxArea.Items.AddRange(new object[] { "Hardware", "Redes" });
             boxArea.Location = new Point(486, 71);
             boxArea.Name = "boxArea";
-            boxArea.Size = new Size(147, 29);
+            boxArea.Size = new Size(147, 33);
             boxArea.TabIndex = 15;
             // 
             // label11
@@ -268,7 +295,7 @@
             boxProyecto.FormattingEnabled = true;
             boxProyecto.Location = new Point(172, 71);
             boxProyecto.Name = "boxProyecto";
-            boxProyecto.Size = new Size(222, 29);
+            boxProyecto.Size = new Size(222, 33);
             boxProyecto.TabIndex = 13;
             // 
             // label7
@@ -281,9 +308,9 @@
             // 
             // btnLimpiarTarea
             // 
-            btnLimpiarTarea.Font = new Font("Segoe Fluent Icons", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLimpiarTarea.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point);
             btnLimpiarTarea.ForeColor = Color.Red;
-            btnLimpiarTarea.Location = new Point(531, 225);
+            btnLimpiarTarea.Location = new Point(531, 216);
             btnLimpiarTarea.Name = "btnLimpiarTarea";
             btnLimpiarTarea.Size = new Size(102, 32);
             btnLimpiarTarea.TabIndex = 10;
@@ -294,9 +321,9 @@
             // 
             // btnGuardarTarea
             // 
-            btnGuardarTarea.Font = new Font("Segoe Fluent Icons", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            btnGuardarTarea.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point);
             btnGuardarTarea.ForeColor = Color.Green;
-            btnGuardarTarea.Location = new Point(399, 225);
+            btnGuardarTarea.Location = new Point(399, 216);
             btnGuardarTarea.Name = "btnGuardarTarea";
             btnGuardarTarea.Size = new Size(102, 32);
             btnGuardarTarea.TabIndex = 9;
@@ -309,7 +336,7 @@
             // 
             numHorasTarea.Location = new Point(172, 115);
             numHorasTarea.Name = "numHorasTarea";
-            numHorasTarea.Size = new Size(67, 28);
+            numHorasTarea.Size = new Size(67, 31);
             numHorasTarea.TabIndex = 8;
             // 
             // label6
@@ -330,7 +357,7 @@
             // 
             // idTarea
             // 
-            idTarea.Location = new Point(581, 31);
+            idTarea.Location = new Point(531, 127);
             idTarea.Name = "idTarea";
             idTarea.Size = new Size(39, 28);
             idTarea.TabIndex = 1;
@@ -344,26 +371,19 @@
             label10.TabIndex = 0;
             label10.Text = "ID";
             // 
-            // txtTarea
-            // 
-            txtTarea.Location = new Point(172, 31);
-            txtTarea.Name = "txtTarea";
-            txtTarea.Size = new Size(286, 28);
-            txtTarea.TabIndex = 11;
-            // 
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Location = new Point(727, 423);
             dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(519, 257);
+            dataGridView2.Size = new Size(519, 213);
             dataGridView2.TabIndex = 12;
             // 
             // btnEditarProyecto
             // 
-            btnEditarProyecto.Font = new Font("Segoe Fluent Icons", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEditarProyecto.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point);
             btnEditarProyecto.ForeColor = Color.Green;
-            btnEditarProyecto.Location = new Point(727, 324);
+            btnEditarProyecto.Location = new Point(727, 294);
             btnEditarProyecto.Name = "btnEditarProyecto";
             btnEditarProyecto.Size = new Size(83, 33);
             btnEditarProyecto.TabIndex = 11;
@@ -373,9 +393,9 @@
             // 
             // btnEditarTarea
             // 
-            btnEditarTarea.Font = new Font("Segoe Fluent Icons", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEditarTarea.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point);
             btnEditarTarea.ForeColor = Color.Green;
-            btnEditarTarea.Location = new Point(727, 699);
+            btnEditarTarea.Location = new Point(727, 659);
             btnEditarTarea.Name = "btnEditarTarea";
             btnEditarTarea.Size = new Size(83, 33);
             btnEditarTarea.TabIndex = 13;
@@ -385,9 +405,9 @@
             // 
             // btnEliminarProyecto
             // 
-            btnEliminarProyecto.Font = new Font("Segoe Fluent Icons", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEliminarProyecto.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point);
             btnEliminarProyecto.ForeColor = Color.Red;
-            btnEliminarProyecto.Location = new Point(1144, 324);
+            btnEliminarProyecto.Location = new Point(1135, 294);
             btnEliminarProyecto.Name = "btnEliminarProyecto";
             btnEliminarProyecto.Size = new Size(102, 33);
             btnEliminarProyecto.TabIndex = 11;
@@ -397,9 +417,9 @@
             // 
             // btnEliminarTarea
             // 
-            btnEliminarTarea.Font = new Font("Segoe Fluent Icons", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEliminarTarea.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point);
             btnEliminarTarea.ForeColor = Color.Red;
-            btnEliminarTarea.Location = new Point(1144, 699);
+            btnEliminarTarea.Location = new Point(1144, 659);
             btnEliminarTarea.Name = "btnEliminarTarea";
             btnEliminarTarea.Size = new Size(102, 33);
             btnEliminarTarea.TabIndex = 14;
@@ -411,7 +431,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1264, 747);
+            ClientSize = new Size(1264, 739);
             Controls.Add(btnEliminarTarea);
             Controls.Add(btnEliminarProyecto);
             Controls.Add(btnEditarTarea);
@@ -427,10 +447,12 @@
             Load += Form1_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericIDProyecto).EndInit();
             ((System.ComponentModel.ISupportInitialize)numHorasTotales).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericIDTarea).EndInit();
             ((System.ComponentModel.ISupportInitialize)numHorasTarea).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
@@ -472,5 +494,7 @@
         private Button btnEditarTarea;
         private Button btnEliminarProyecto;
         private Button btnEliminarTarea;
+        private NumericUpDown numericIDProyecto;
+        private NumericUpDown numericIDTarea;
     }
 }

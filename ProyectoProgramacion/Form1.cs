@@ -5,6 +5,9 @@ namespace ProyectoProgramacion
 {
     public partial class Form1 : Form
     {
+        private bool EditandoP = false;
+        private bool EditandoT = false;
+
         public Form1()
         {
             InitializeComponent();
@@ -17,61 +20,182 @@ namespace ProyectoProgramacion
         }
         private void limpiezaProyecto()
         {
-            /*
-             * txtProyecto set ""
-             * txtDescripcion set ""
-             * numHorasTotales set 0
-             */
-
+            txtProyecto.Text = "";
+            txtDescripcion.Text = "";
+            numHorasTotales.Value = 0;
+            numericIDProyecto.Enabled = true;
         }
 
         private void limpiezaTarea()
         {
             /*
-             * txtTarea set ""
-             * boxProyecto index 0
-             * boxTarea set index 0
-             * numHorasTarea set 0
-             * boxUsuarios index 0
-             */
+            txtTarea.Text = "";
+            boxProyecto.SelectedIndex = 1;
+            boxArea.SelectedIndex = 1;
+            numHorasTarea.Value = 0;
+            boxUsuarios.SelectedIndex = 1;
+            */
         }
 
-        private void btnGuardarProyecto_Click(object sender, EventArgs e)
+        private async void btnGuardarProyecto_Click(object sender, EventArgs e)
         {
-            /*
-             * Gestion proyecto
-             *  proyecto        = txtProyecto
-             *  descripcion     = txtDescripcion
-             *  horas_totales   = numHorasTotales  
-             *  Para la hora utilizaremos la hora actual al guardar el objeto
-             *  
-             *
-             *  *Codigo para el guardado de los datos de objeto a la clase Proyecto
-             *
-            */
-            limpiezaProyecto(); // Limpiamos campos luego de la insercion
+            /*try
+            {
+                ProyectoServicio proyectoServicio = new ProyectoServicio();
+                Proyecto proyecto = new Proyecto
+                {
+                    Name = txtProyecto.Text.Trim(),
+                    Description = txtDescripcion.Text.Trim(),
+                    TotalHours = numHorasTotales.Value.ToString(),
+                    WorkerHours = "0",
+                    Status = "Pendiente",
+                    CreatedAt = DateTime.Now // Sacar Fecha actual
+                };
+
+                if (EditandoP)
+                {
+                    // Editar proyecto existente
+                    await proyectoServicio.Update(proyecto.Id, proyecto);
+                }
+                else
+                {
+                    // Guardar nuevo proyecto (No enviar la ID si la API la genera automáticamente)
+                    await proyectoServicio.Create(proyecto);
+                }
+
+                // Recargar la lista de proyectos
+                List<Proyecto> proyectos = await proyectoServicio.Index();
+                dataGridView1.DataSource = proyectos;
+
+                limpiezaProyecto();
+                EditandoP = false;
+                btnGuardarProyecto.Text = "Guardar";
+                btnLimpiarProyecto.Text = "Limpiar";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al guardar proyecto: {ex.Message}");
+            }*/
         }
+
 
         private void btnLimpiarProyecto_Click(object sender, EventArgs e)
         {
-            limpiezaProyecto(); // Limpiamos los campos de Proyecto
-        }
-
-        private void btnGuardarTarea_Click(object sender, EventArgs e)
-        {
-            /*
-             * Gestion Tarea
-             *  descripcionTarea = txtTarea
-             *  proyectoAsignado = boxProyecto // Rellenar box un select de proyectos
-             *  areaAsiganada    = boxArea 
-             *  horas            = numHorasTarea
-             *  usuarioAsignado  = boxUsuarios // Rellenar box un select de usuarios
-             */
+            if (EditandoP)
+            {
+                // Cancelar la edición
+                EditandoP = false;
+                btnGuardarProyecto.Text = "Guardar";
+                btnLimpiarProyecto.Text = "Limpiar";
+                numericIDProyecto.Enabled = true;
+            }
+            limpiezaProyecto();
         }
 
         private void btnLimpiarTarea_Click(object sender, EventArgs e)
         {
-            limpiezaTarea(); // Limpiamos campos de Tarea
+            if (EditandoT)
+            {
+                // Cancelar la edición
+                EditandoT = false;
+                btnGuardarTarea.Text = "Guardar";
+                btnLimpiarTarea.Text = "Limpiar";
+            }
+            limpiezaTarea();
+        }
+
+        private async void btnGuardarTarea_Click(object sender, EventArgs e)
+        {
+            /*try
+            {
+                TareaServicio tareaServicio = new TareaServicio();
+                Tarea tarea = new Tarea
+                {
+                    Description = txtTarea.Text,
+                    Project_id = (int)boxProyecto.SelectedValue,
+                    Area = boxArea.SelectedItem.ToString(),
+                    Hours = (int)numHorasTarea.Value,
+                    User_id = (int)boxUsuarios.SelectedValue,
+                    Status = "Pendiente",  // Valor por defecto
+                    Start_date = DateTime.Now  // Fecha del sistema
+                };
+
+                if (EditandoT)
+                {
+                    // Actualizar tarea existente
+                    tarea.Id = int.Parse(idTarea.Text);
+                    await tareaServicio.Update(tarea.Id, tarea);
+                }
+                else
+                {
+                    // Crear nueva tarea
+                    await tareaServicio.Create(tarea);
+                }
+
+                // Actualizar DataGridView de tareas
+                await CargarTareasDeProyecto(tarea.Project_id);
+
+                limpiezaTarea();
+                EditandoT = false;
+                btnGuardarTarea.Text = "Guardar";
+                btnLimpiarTarea.Text = "Limpiar";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al guardar la tarea: {ex.Message}");
+            }*/
+        }
+
+        private async void btnEliminarProyecto_Click(object sender, EventArgs e)
+        {
+           /* if (EditandoP)
+            {
+                try
+                {
+                    int projectId = (int)numericIDProyecto.Value;
+                    ProyectoServicio proyectoServicio = new ProyectoServicio();
+                    await proyectoServicio.Delete(projectId);
+
+                    // Recargar la lista de proyectos
+                    List<Proyecto> proyectos = await proyectoServicio.Index();
+                    dataGridView1.DataSource = proyectos;
+
+                    limpiezaProyecto();
+                    EditandoP = false;
+                    btnGuardarProyecto.Text = "Guardar";
+                    btnLimpiarProyecto.Text = "Limpiar";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al eliminar proyecto: {ex.Message}");
+                }
+            }*/
+        }
+
+        private async void btnEliminarTarea_Click(object sender, EventArgs e)
+        {
+            /*if (EditandoT)
+            {
+                try
+                {
+                    int tareaId = Convert.ToInt32(idTarea.Text);
+                    TareaServicio tareaServicio = new TareaServicio();
+                    await tareaServicio.Delete(tareaId);
+
+                    // Recargar las tareas del proyecto seleccionado
+                    int projectId = Convert.ToInt32(numericIDProyecto.Value);
+                    await CargarTareasDeProyecto(projectId);
+
+                    limpiezaTarea();
+                    EditandoT = false;
+                    btnGuardarTarea.Text = "Guardar";
+                    btnLimpiarTarea.Text = "Limpiar";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al eliminar tarea: {ex.Message}");
+                }
+            }*/
         }
 
         private async Task CargarTareasDeProyecto(int projectId)
@@ -114,6 +238,10 @@ namespace ProyectoProgramacion
         {
             if (e.RowIndex >= 0)
             {
+                EditandoT = true;
+                btnGuardarTarea.Text = "Editar";
+                btnLimpiarTarea.Text = "Cancelar";
+
                 try
                 {
                     // Obtener ID de tarea seleccionada
@@ -141,21 +269,24 @@ namespace ProyectoProgramacion
         {
             if (e.RowIndex >= 0)
             {
+                EditandoP = true;
+                btnGuardarProyecto.Text = "Editar";
+                btnLimpiarProyecto.Text = "Cancelar";
+                numericIDProyecto.Enabled = false;
+
                 try
                 {
-                    // Obtener ID de proyecto seleccionado
                     int projectId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Id"].Value);
 
                     ProyectoServicio proyectoServicio = new ProyectoServicio();
                     Proyecto proyecto = await proyectoServicio.Show(projectId);
 
-                    // Mostrar datos del proyecto en los campos que corresponden
                     idProyecto.Text = proyecto.Id.ToString();
                     txtProyecto.Text = proyecto.Name;
                     txtDescripcion.Text = proyecto.Description;
                     numHorasTotales.Value = decimal.Parse(proyecto.TotalHours);
+                    numericIDProyecto.Value = proyecto.Id;
 
-                    // Cargar tareas relacionadas al proyecto seleccionado
                     await CargarTareasDeProyecto(projectId);
                 }
                 catch (Exception ex)
